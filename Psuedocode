@@ -11,7 +11,7 @@
 12. jika iya input nim (cari nim diproses)
 13. input keputusan (yakin hapus?)
 14. jika tidak  kembali ke pilihan menu
-15. jika ya data otomatis terhapus
-16. jika tidak kembali ke pilihan menu
+15. jika ya data otomatis terhapus dan akan dibawa ke menu utama
+16. jika tidak kembali ke pilihan menu 
 17. Pilihan ke 3 tampilkan "Terimakasih Sudah memakai aplikasi kami"
 18. Selesai
