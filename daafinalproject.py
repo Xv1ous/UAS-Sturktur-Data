@@ -71,4 +71,4 @@ print(ascii_art)
 Username = input("Masukan username anda: ")
 print("Selamat datang,"+Username)
 tampilkan_Jadwal()
-
+menu()
