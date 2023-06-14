@@ -1,10 +1,12 @@
 #untuk tampilin Jadwal
 def tampilkan_Jadwal() : 
-    print('Senin : ',daftarJadwal['Senin']['Name'],', ',daftarJadwal['Senin']['Time'])
-    print('Selasa : ',daftarJadwal['Selasa']['Name'],', ',daftarJadwal['Selasa']['Time'])
-    print('Rabu : ',daftarJadwal['Rabu']['Name'],', ',daftarJadwal['Rabu']['Time'])
-    print('Kamis : ',daftarJadwal['Kamis']['Name'],', ',daftarJadwal['Kamis']['Time'])
-    print('Jumat : ',daftarJadwal['Jumat']['Name'],', ',daftarJadwal['Jumat']['Time'])
+    print("----------------------------------------------------------------")
+    print('Senin   : {: <15}{: <8}'.format(daftarJadwal['Senin']['Name'], daftarJadwal['Senin']['Time']))
+    print('Selasa  : {: <15}{: <8}'.format(daftarJadwal['Selasa']['Name'], daftarJadwal['Selasa']['Time']))
+    print('Rabu    : {: <15}{: <8}'.format(daftarJadwal['Rabu']['Name'], daftarJadwal['Rabu']['Time']))
+    print('Kamis   : {: <15}{: <8}'.format(daftarJadwal['Kamis']['Name'], daftarJadwal['Kamis']['Time']))
+    print('Jumat   : {: <15}{: <8}'.format(daftarJadwal['Jumat']['Name'], daftarJadwal['Jumat']['Time']))
+    print("----------------------------------------------------------------")
 
 daftarJadwal = {
     'Senin' : {
@@ -33,6 +35,28 @@ daftarJadwal = {
         'Status' : 'Available'
     },
 }
+
+def menu():
+     while True:
+        print("Selamat datang di aplikasi konseling")
+        print("1. Masukan biodata")
+        print("2. Jadwal yang sudah di booking")
+        print("3. Keluar aplikasi")
+        pilihan_menu = int(input("Silahkan memilih menu anda: "))
+
+        if pilihan_menu == 1:
+            # menu 1
+            print("Masukan biodata anda:")
+        elif pilihan_menu == 2:
+            # menu 2
+            print("Berikut jadwal yang sudah di booking")
+        elif pilihan_menu == 3:
+            # keluar aplikasi
+            print("Terima kasih telah menggunakan aplikasi ini")
+            break  
+        else:
+            print("Input tidak valid")
+
 
 ascii_art = """
   __        __   _                            _ 
