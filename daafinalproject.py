@@ -47,6 +47,22 @@ def menu():
         if pilihan_menu == 1:
             # menu 1
             print("Masukan biodata anda:")
+            nama = input("Nama: ")
+            nim = input("NIM: ")
+            # Lakukan proses input biodata lainnya sesuai kebutuhan
+
+            print("Biodata telah berhasil dimasukkan.")
+
+            tampilkan_Jadwal()
+
+            # Jika tersedia konselor (nah kalo bagian ini gw gatau nih
+            konselor = input("Apakah tersedia konselor?   (ya/tidak): ")
+            if konselor.lower() == "ya":
+                print("Jadwal booking telah ditambahkan.")
+
+            # Kembali ke menu utama
+            input("Tekan Enter untuk kembali ke menu utama.")
+
         elif pilihan_menu == 2:
             # menu 2
             print("Berikut jadwal yang sudah di booking")
