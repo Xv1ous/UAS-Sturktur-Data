@@ -1,5 +1,11 @@
+import os
+def clear_console():
+    # Clear console for different operating systems
+    os.system('cls' if os.name == 'nt' else 'clear')
+
 #untuk tampilin Jadwal
 def tampilkan_Jadwal() : 
+    clear_console()
     print("----------------------------------------------------------------")
     print('Senin   : {: <15}{: <8}'.format(daftarJadwal['Senin']['Name'], daftarJadwal['Senin']['Time']))
     print('Selasa  : {: <15}{: <8}'.format(daftarJadwal['Selasa']['Name'], daftarJadwal['Selasa']['Time']))
