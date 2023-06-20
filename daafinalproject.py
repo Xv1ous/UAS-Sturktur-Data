@@ -16,26 +16,31 @@ def tampilkan_Jadwal() :
 
 daftarJadwal = {
     'Senin' : {
+        'id' : 1,
         'Name' : 'Sena',
         'Time' : '08:00 - 15:00',
         'Status' : 'Available'
     },
     'Selasa' : {
+        'id' : 2,
         'Name' : 'Selia',
         'Time' : '08:00 - 15:00',
         'Status' : 'Available'
     },
     'Rabu' : {
+        'id' : 3,
         'Name' : 'Rabita',
         'Time' : '08:00 - 15:00',
         'Status' : 'Available'
     },
     'Kamis' : {
+        'id' : 4,
         'Name' : 'Kamila',
         'Time' : '08:00 - 15:00',
         'Status' : 'Available'
     },
     'Jumat' : {
+        'id' : 5,
         'Name' : 'Jumarni',
         'Time' : '08:00 - 12:00',
         'Status' : 'Available'
