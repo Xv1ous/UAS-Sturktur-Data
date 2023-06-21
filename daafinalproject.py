@@ -7,11 +7,11 @@ def clear_console():
 def tampilkan_Jadwal() : 
     clear_console()
     print("----------------------------------------------------------------")
-    print('Senin   : {: <15}{: <8}'.format(daftarJadwal['Senin']['Name'], daftarJadwal['Senin']['Time']))
-    print('Selasa  : {: <15}{: <8}'.format(daftarJadwal['Selasa']['Name'], daftarJadwal['Selasa']['Time']))
-    print('Rabu    : {: <15}{: <8}'.format(daftarJadwal['Rabu']['Name'], daftarJadwal['Rabu']['Time']))
-    print('Kamis   : {: <15}{: <8}'.format(daftarJadwal['Kamis']['Name'], daftarJadwal['Kamis']['Time']))
-    print('Jumat   : {: <15}{: <8}'.format(daftarJadwal['Jumat']['Name'], daftarJadwal['Jumat']['Time']))
+    print('Senin   : {: <15}{: <8}'.format(daftarJadwal['Senin']['Name'], daftarJadwal['Senin']['Time']),' ID : ' ,daftarJadwal['Senin']['id'])
+    print('Selasa  : {: <15}{: <8}'.format(daftarJadwal['Selasa']['Name'], daftarJadwal['Selasa']['Time']),' ID : ' ,daftarJadwal['Selasa']['id'])
+    print('Rabu    : {: <15}{: <8}'.format(daftarJadwal['Rabu']['Name'], daftarJadwal['Rabu']['Time']),' ID : ' ,daftarJadwal['Rabu']['id'])
+    print('Kamis   : {: <15}{: <8}'.format(daftarJadwal['Kamis']['Name'], daftarJadwal['Kamis']['Time']),' ID : ' ,daftarJadwal['Kamis']['id'])
+    print('Jumat   : {: <15}{: <8}'.format(daftarJadwal['Jumat']['Name'], daftarJadwal['Jumat']['Time']),' ID : ' ,daftarJadwal['Jumat']['id'])
     print("----------------------------------------------------------------")
 
 daftarJadwal = {
@@ -47,6 +47,51 @@ daftarJadwal = {
     },
 }
 
+def cekSenin() :
+    if daftarJadwal['Senin']['Status']== 'Available' :
+        print('Jadwal booking anda telah di tambahkan')
+        daftarJadwal['Senin']['Status'] = 'Not Available'
+    else :
+        print('Jadwal booking sudah penuh')
+                    
+def cekSelasa() :
+    if daftarJadwal['Selasa']['Status'] == 'Available' :
+        print('Jadwal booking anda telah di tambahkan')
+        daftarJadwal['Selasa']['Status'] = 'Not Available'
+    else :
+        print('Jadwal booking sudah penuh')
+
+def cekRabu() :       
+    if daftarJadwal['Rabu']['Status'] == 'Available' :
+        print('Jadwal booking anda telah di tambahkan')
+        daftarJadwal['Rabu']['Status'] = 'Not Available'
+    else :
+        print('Jadwal booking sudah penuh')
+
+def cekKamis() :      
+    if daftarJadwal['Kamis']['Status'] == 'Available' :
+        print('Jadwal booking anda telah di tambahkan')
+        daftarJadwal['Kamis']['Status'] = 'Not Available'
+    else :
+        print('Jadwal booking sudah penuh')
+
+def cekJumat() :     
+    if daftarJadwal['Jumat']['Status'] == 'Available' :
+        print('Jadwal booking anda telah di tambahkan')
+        daftarJadwal['Jumat']['Status'] = 'Not Available'
+    else :
+        print('Jadwal booking sudah penuh')
+
+
+def jadwalStatus():
+    print("----------------------------------------------------------------")
+    print('Senin : ',daftarJadwal['Senin']['Name'], daftarJadwal['Senin']['Status'])
+    print('Selasa : ',daftarJadwal['Selasa']['Name'], daftarJadwal['Selasa']['Status'])
+    print('Rabu : ',daftarJadwal['Rabu']['Name'], daftarJadwal['Rabu']['Status'])
+    print('Kamis : ',daftarJadwal['Kamis']['Name'], daftarJadwal['Kamis']['Status'])
+    print('Jumat : ',daftarJadwal['Jumat']['Name'], daftarJadwal['Jumat']['Status'])
+    print("----------------------------------------------------------------")
+
 def menu():
      while True:
         print("Selamat datang di aplikasi konseling")
@@ -58,25 +103,29 @@ def menu():
         if pilihan_menu == 1:
             # menu 1
             print("Masukan biodata anda:")
-            nama = input("Nama: ")
-            nim = input("NIM: ")
-            # Lakukan proses input biodata lainnya sesuai kebutuhan
-
-            print("Biodata telah berhasil dimasukkan.")
-
-            tampilkan_Jadwal()
-
-            # Jika tersedia konselor (nah kalo bagian ini gw gatau nih
-            konselor = input("Apakah tersedia konselor?   (ya/tidak): ")
-            if konselor.lower() == "ya":
-                print("Jadwal booking telah ditambahkan.")
-
+            nama = input("Nama : ")
+            nim = input("NIM : ")
+            usia = input("Usia : ")
+            kasus = input("Deskripsi Masalah : ")
+            hariKonseling = input('Masukkan hari Konseling : ')
+            if hariKonseling == 'Senin' :
+                  cekSenin()
+            elif hariKonseling == 'Selasa' :
+                  cekSelasa()
+            elif hariKonseling == 'Rabu' :
+                  cekRabu()
+            elif hariKonseling == 'Kamis' :
+                  cekKamis()
+            elif hariKonseling == 'Jumat' :
+                  cekJumat()
+                  
             # Kembali ke menu utama
             input("Tekan Enter untuk kembali ke menu utama.")
 
         elif pilihan_menu == 2:
             # menu 2
             print("Berikut jadwal yang sudah di booking")
+            jadwalStatus()
         elif pilihan_menu == 3:
             # keluar aplikasi
             print("Terima kasih telah menggunakan aplikasi ini")
