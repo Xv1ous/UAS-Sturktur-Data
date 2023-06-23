@@ -96,9 +96,16 @@ while menu==True:
             else :
                 print('Jadwal sudah penuh \n')
         
-        data_konseling = Bookinglist(nama,nim,hp)
-        del data_list[id-1]
-        data_list.insert(id-1,data_konseling)
+       else:
+            print('Input tidak valid')
+            
+        
+        if 'nama' in locals() and 'nim' in locals() and 'hp' in locals():
+            data_konseling = Bookinglist(nama, nim, hp)
+            del data_list[id - 1]
+            data_list.insert(id - 1, data_konseling)
+        else:
+            print('Biodata tidak lengkap. Registrasi dibatalkan.\n')
 
 
     elif pilihan_menu == 2:
