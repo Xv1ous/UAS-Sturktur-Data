@@ -96,7 +96,7 @@ while menu==True:
             else :
                 print('Jadwal sudah penuh \n')
         
-       else:
+        else:
             print('Input tidak valid')
             
         
@@ -131,7 +131,33 @@ while menu==True:
                 print('No hp : ',data_list[n].bookinglist_hp)
                 print ('=====================================')
                 n += 1
-    
+
+        jawaban = input("Apakah ada yang ingin di hapus ? (y/t)")
+        if jawaban.lower() == 'y' :
+            tujuanHapus = (input('Hari apa yang ingin di hapus ? '))
+            if tujuanHapus.lower() == 'senin' :
+                if jadwal[0].jadwalKonsuler_status == False :
+                    jadwal[0].jadwalKonsuler_status = True
+                    print('Jadwal telah di hapus \n')
+            if tujuanHapus.lower() == 'selasa' :
+                if jadwal[1].jadwalKonsuler_status == False :
+                    jadwal[1].jadwalKonsuler_status = True
+                    print('Jadwal telah di hapus \n')
+            if tujuanHapus.lower() == 'rabu' :
+                if jadwal[2].jadwalKonsuler_status == False :
+                    jadwal[2].jadwalKonsuler_status = True
+                    print('Jadwal telah di hapus \n')
+            if tujuanHapus.lower() == 'kamis' :
+                if jadwal[3].jadwalKonsuler_status == False :
+                    jadwal[3].jadwalKonsuler_status = True
+                    print('Jadwal telah di hapus \n')
+            if tujuanHapus.lower() == 'jumat' :
+                if jadwal[4].jadwalKonsuler_status == False :
+                    jadwal[4].jadwalKonsuler_status = True
+                    print('Jadwal telah di hapus \n')
+            else : 
+                print('Input tidak valid')
+            
     elif pilihan_menu == 3:
         print("Terima kasih telah menggunakan aplikasi ini")
         break
