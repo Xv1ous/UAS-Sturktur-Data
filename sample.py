@@ -90,7 +90,7 @@ while menu==True:
                 nama = input("Nama : ")
                 nim = input("NIM : ")
                 hp = input("No HP : ")
-                id= 3
+                id= 5
                 jadwal[4].jadwalKonsuler_status = False
                 print('Jadwal telah di tambahkan \n')
             else :
