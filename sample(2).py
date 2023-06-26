@@ -119,8 +119,9 @@ def menu():
         print("Selamat datang di aplikasi konseling")
         print("1. Masukkan biodata")
         print("2. Jadwal yang sudah di booking")
-        print("3. Keluar aplikasi")
-        pilihan_menu = input("Silahkan memilih menu Anda: ")
+        print("3. Edit Biodata")
+        print("4. Keluar aplikasi")
+        pilihan_menu = input("Silahkan memilih menu Anda: "
 
         if pilihan_menu == '1':
             # Menu 1 - Masukkan biodata
