@@ -84,6 +84,50 @@ def penampilan_jadwal_status():
             print('Usia : ', biodata[n].bookinglist_usia)
             print('=====================================')
 
+def edit_biodata():
+    n = 0
+    penampilan_jadwal_status()
+    print("Edit biodata booking:")
+    jawab = input("Apakah anda ingin mengedit data yang di masukan (y/t) \n")
+    if jawab == 'y':
+        jawab_hari = input("Entry hari apa yang ingin diedit ? :\n")
+        if jawab_hari == 'senin':
+            n=0
+        elif jawab_hari == 'selasa':
+            n=1
+        elif jawab_hari == 'rabu':
+            n=2
+        elif jawab_hari == 'kamis':
+            n=3
+        elif jawab_hari == 'jumat':
+            n=4
+        else :
+            print("input tidak valid")
+            
+        jawaban_nama = input("Apakah anda ingin mengedit nama ? (y/t)\n")
+        if jawaban_nama.lower() == 'y' :
+            new_name = input("Masukkan nama :")
+            biodata[n].bookinglist_nama = new_name
+        else:   
+            print()
+        jawaban_nim = input("Apakah anda ingin mengedit nim ? (y/t)\n")
+        if jawaban_nim.lower() == 'y' :
+            new_nim = input("Masukan NIM :")
+            biodata[n].bookinglist_nim = new_nim
+        jawaban_usia = input("Apakah anda ingin mengedit usia ? (y/t)\n")
+        if jawaban_usia == 'y' :
+            new_usia = input("Masukan usia :")
+            biodata[n].bookinglist_usia = new_usia
+        jawaban_harikonseling = input("Apakah anda ingin menghapus jadwal untuk hari ini ? (y/t)\n")
+        if jawaban_harikonseling == 'y' :
+            if daftarJadwal[n].jadwalKonsuler_status == False :
+                daftarJadwal[n].jadwalKonsuler_status = True
+                print('Jadwal telah di hapus \n')
+            
+
+    else:
+            print("Anda tidak mengedit")
+
 def menu():
     while True:
         print("Selamat datang di aplikasi konseling")
@@ -103,10 +147,12 @@ def menu():
             input("Tekan Enter untuk kembali ke menu utama...")
             clear_console()
         elif pilihan_menu == '3':
-            # Menu 3 - Keluar aplikasi
-            print("Terima kasih telah menggunakan aplikasi konseling.")
+            # Menu 3 - Edit biodata
+            edit_biodata()
+            input("Tekan Enter untuk kembali ke menu utama...")
+        elif pilihan_menu == '4':
+            # Menu 4 - Keluar aplikasi
+            print("Terimakasih telah mengunakan aplikasi ini.")
             break
-        else:
-            print("Menu tidak valid. Silakan pilih menu yang tersedia.")
 
 menu()
