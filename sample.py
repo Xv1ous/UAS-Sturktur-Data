@@ -5,17 +5,23 @@ class Bookinglist:
         self.bookinglist_hp = bookinglist_hp
 
 class JadwalKonsuler:
-    def __init__(self,jadwalKonsuler_hari,jadwalKonsuler_nama,jadwalKonsuler_status):
+    def __init__(self,jadwalKonsuler_hari,jadwalKonsuler_nama,jadwalKonsuler_status,jadwalKonsuler_waktu):
         self.jadwalKonsuler_hari = jadwalKonsuler_hari
         self.jadwalKonsuler_nama = jadwalKonsuler_nama
         self.jadwalKonsuler_status = jadwalKonsuler_status
+        self.jadwalKonsuler_waktu = jadwalKonsuler_waktu
 
 jadwal = [
-    JadwalKonsuler('senin','Sena',True),
-    JadwalKonsuler('selasa','Selia',True),
-    JadwalKonsuler('rabu','Rabita',True),
-    JadwalKonsuler('kamis','Kamila',True),
-    JadwalKonsuler('jumat','Jumarni',True)
+    JadwalKonsuler('senin','Sena',True,'08:00 - 12:00'),
+    JadwalKonsuler('senin','Adiarja',True,'12:00 - 16:00'),
+    JadwalKonsuler('selasa','Selia',True,'08:00 - 12:00'),
+    JadwalKonsuler('selasa','Elizabeth',True,'12:00 - 16:00'),
+    JadwalKonsuler('rabu','Rabita',True,'08:00 - 12:00'),
+    JadwalKonsuler('rabu','Leon',True,'12:00 - 16:00'),
+    JadwalKonsuler('kamis','Kamila',True,'08:00 - 12:00'),
+    JadwalKonsuler('kamis','Tiffa',True,'12:00 - 16:00'),
+    JadwalKonsuler('jumat','Jumarni',True,'08:00 - 12:00'),
+    JadwalKonsuler('jumat','Kafka',True,'12:00 - 16:00')
 ]
 
 ascii_art = """
@@ -27,7 +33,7 @@ ascii_art = """
 """
 
 print(ascii_art)
-data_list = [0,0,0,0,0]
+data_list = [None] * 10
 menu = True
 while menu==True:
     print("Selamat datang di aplikasi konseling")
@@ -38,8 +44,8 @@ while menu==True:
 
     if pilihan_menu == 1:   
         hariKonseling = input('Masukkan hari Konseling : ') 
-
-        if hariKonseling.lower()=='senin':
+        jamkonseling = input("Masukan jam yang ingin pilih (08:00 - 12:00(A) dan 12:00 - 16:00(B)): ")
+        if hariKonseling.lower()=='senin' and jamkonseling.lower()=='a':
             if jadwal[0].jadwalKonsuler_status == True :
                 print("Masukan biodata anda:")
                 nama = input("Nama : ")
@@ -50,8 +56,8 @@ while menu==True:
                 print('Jadwal telah di tambahkan \n')
             else :
                 print('Jadwal sudah penuh \n')
-        elif hariKonseling.lower()=='selasa':
-             if jadwal[1].jadwalKonsuler_status == True :
+        elif hariKonseling.lower()=='senin' and jamkonseling.lower()=='b':
+            if jadwal[1].jadwalKonsuler_status == True :
                 print("Masukan biodata anda:")
                 nama = input("Nama : ")
                 nim = input("NIM : ")
@@ -59,11 +65,10 @@ while menu==True:
                 id= 2
                 jadwal[1].jadwalKonsuler_status = False
                 print('Jadwal telah di tambahkan \n')
-             else :
+            else :
                 print('Jadwal sudah penuh \n')
-            
-        elif hariKonseling.lower()=='rabu':
-            if jadwal[2].jadwalKonsuler_status == True :
+        elif hariKonseling.lower()=='selasa' and jamkonseling.lower()=='a':
+             if jadwal[2].jadwalKonsuler_status == True :
                 print("Masukan biodata anda:")
                 nama = input("Nama : ")
                 nim = input("NIM : ")
@@ -71,10 +76,10 @@ while menu==True:
                 id= 3
                 jadwal[2].jadwalKonsuler_status = False
                 print('Jadwal telah di tambahkan \n')
-            else :
+             else :
                 print('Jadwal sudah penuh \n')
-        elif hariKonseling.lower()=='kamis':
-            if jadwal[3].jadwalKonsuler_status == True :
+        elif hariKonseling.lower()=='selasa' and jamkonseling.lower()=='b':
+             if jadwal[3].jadwalKonsuler_status == True :
                 print("Masukan biodata anda:")
                 nama = input("Nama : ")
                 nim = input("NIM : ")
@@ -82,10 +87,10 @@ while menu==True:
                 id= 4
                 jadwal[3].jadwalKonsuler_status = False
                 print('Jadwal telah di tambahkan \n')
-            else :
+             else :
                 print('Jadwal sudah penuh \n')
-        elif hariKonseling.lower()=='jumat':
-            if jadwal[4].jadwalKonsuler_status == True :
+        elif hariKonseling.lower()=='rabu' and jamkonseling.lower()=='a':
+             if jadwal[4].jadwalKonsuler_status == True :
                 print("Masukan biodata anda:")
                 nama = input("Nama : ")
                 nim = input("NIM : ")
@@ -93,9 +98,63 @@ while menu==True:
                 id= 5
                 jadwal[4].jadwalKonsuler_status = False
                 print('Jadwal telah di tambahkan \n')
-            else :
+             else :
                 print('Jadwal sudah penuh \n')
-        
+        elif hariKonseling.lower()=='rabu' and jamkonseling.lower()=='b':
+             if jadwal[5].jadwalKonsuler_status == True :
+                print("Masukan biodata anda:")
+                nama = input("Nama : ")
+                nim = input("NIM : ")
+                hp = input("No HP : ")
+                id= 6
+                jadwal[5].jadwalKonsuler_status = False
+                print('Jadwal telah di tambahkan \n')
+             else :
+                print('Jadwal sudah penuh \n')
+        elif hariKonseling.lower()=='kamis' and jamkonseling.lower()=='a':
+             if jadwal[6].jadwalKonsuler_status == True :
+                print("Masukan biodata anda:")
+                nama = input("Nama : ")
+                nim = input("NIM : ")
+                hp = input("No HP : ")
+                id= 7
+                jadwal[6].jadwalKonsuler_status = False
+                print('Jadwal telah di tambahkan \n')
+             else :
+                print('Jadwal sudah penuh \n')
+        elif hariKonseling.lower()=='kamis' and jamkonseling.lower()=='b':
+             if jadwal[7].jadwalKonsuler_status == True :
+                print("Masukan biodata anda:")
+                nama = input("Nama : ")
+                nim = input("NIM : ")
+                hp = input("No HP : ")
+                id= 8
+                jadwal[7].jadwalKonsuler_status = False
+                print('Jadwal telah di tambahkan \n')
+             else :
+                print('Jadwal sudah penuh \n')
+        elif hariKonseling.lower()=='jumat' and jamkonseling.lower()=='a':
+             if jadwal[8].jadwalKonsuler_status == True :
+                print("Masukan biodata anda:")
+                nama = input("Nama : ")
+                nim = input("NIM : ")
+                hp = input("No HP : ")
+                id= 9
+                jadwal[8].jadwalKonsuler_status = False
+                print('Jadwal telah di tambahkan \n')
+             else :
+                print('Jadwal sudah penuh \n')
+        elif hariKonseling.lower()=='jumat' and jamkonseling.lower()=='b':
+             if jadwal[9].jadwalKonsuler_status == True :
+                print("Masukan biodata anda:")
+                nama = input("Nama : ")
+                nim = input("NIM : ")
+                hp = input("No HP : ")
+                id= 10
+                jadwal[9].jadwalKonsuler_status = False
+                print('Jadwal telah di tambahkan \n')
+             else :
+                print('Jadwal sudah penuh \n')     
         else:
             print('Input tidak valid')
             
@@ -116,6 +175,7 @@ while menu==True:
                 print ('=====================================')
                 print('Hari : ',list.jadwalKonsuler_hari)
                 print("Konsuler : ",list.jadwalKonsuler_nama)
+                print("Waktu : ",list.jadwalKonsuler_waktu)
                 print("Status : ",tersedia)
                 print ('=====================================')
                 n += 1
@@ -125,6 +185,7 @@ while menu==True:
                 print ('=====================================')
                 print('Hari : ',list.jadwalKonsuler_hari)
                 print("Konsuler : ",list.jadwalKonsuler_nama)
+                print("Waktu : ",list.jadwalKonsuler_waktu)
                 print("Status : ",tidakTersedia)
                 print('di Booking oleh : ',data_list[n].bookinglist_name)
                 print('NIM : ',data_list[n].bookinglist_nim)
@@ -134,33 +195,58 @@ while menu==True:
 
         jawaban = input("Apakah ada yang ingin di hapus ? (y/t)")
         if jawaban.lower() == 'y' :
-            tujuanHapus = (input('Hari apa yang ingin di hapus ? '))
-            if tujuanHapus.lower() == 'senin' :
+            tujuanHapus = input('Hari apa yang ingin di hapus ? ')
+            tujuanWaktu = input('Masukan jam yang ingin dihapus (08:00 - 12:00(A) dan 12:00 - 16:00(B)):')
+            if tujuanHapus.lower() == 'senin' and tujuanWaktu.lower()=='a':
                 if jadwal[0].jadwalKonsuler_status == False :
                     jadwal[0].jadwalKonsuler_status = True
                     print('Jadwal telah di hapus \n')
-            if tujuanHapus.lower() == 'selasa' :
+            if tujuanHapus.lower() == 'senin' and tujuanWaktu.lower()=='b':
                 if jadwal[1].jadwalKonsuler_status == False :
                     jadwal[1].jadwalKonsuler_status = True
                     print('Jadwal telah di hapus \n')
-            if tujuanHapus.lower() == 'rabu' :
+            if tujuanHapus.lower() == 'selasa' and tujuanWaktu.lower()=='a':
                 if jadwal[2].jadwalKonsuler_status == False :
                     jadwal[2].jadwalKonsuler_status = True
                     print('Jadwal telah di hapus \n')
-            if tujuanHapus.lower() == 'kamis' :
+            if tujuanHapus.lower() == 'selasa' and tujuanWaktu.lower()=='b':
                 if jadwal[3].jadwalKonsuler_status == False :
                     jadwal[3].jadwalKonsuler_status = True
                     print('Jadwal telah di hapus \n')
-            if tujuanHapus.lower() == 'jumat' :
+            if tujuanHapus.lower() == 'rabu' and tujuanWaktu.lower()=='a':
                 if jadwal[4].jadwalKonsuler_status == False :
                     jadwal[4].jadwalKonsuler_status = True
                     print('Jadwal telah di hapus \n')
+            if tujuanHapus.lower() == 'rabu' and tujuanWaktu.lower()=='b':
+                if jadwal[5].jadwalKonsuler_status == False :
+                    jadwal[5].jadwalKonsuler_status = True
+                    print('Jadwal telah di hapus \n')
+            if tujuanHapus.lower() == 'kamis' and tujuanWaktu.lower()=='a':
+                if jadwal[6].jadwalKonsuler_status == False :
+                    jadwal[6].jadwalKonsuler_status = True
+                    print('Jadwal telah di hapus \n')
+            if tujuanHapus.lower() == 'kamis' and tujuanWaktu.lower()=='b':
+                if jadwal[7].jadwalKonsuler_status == False :
+                    jadwal[7].jadwalKonsuler_status = True
+                    print('Jadwal telah di hapus \n')
+            if tujuanHapus.lower() == 'jumat' and tujuanWaktu.lower()=='a':
+                if jadwal[8].jadwalKonsuler_status == False :
+                    jadwal[8].jadwalKonsuler_status = True
+                    print('Jadwal telah di hapus \n')
+            if tujuanHapus.lower() == 'jumat' and tujuanWaktu.lower()=='b':
+                if jadwal[9].jadwalKonsuler_status == False :
+                    jadwal[9].jadwalKonsuler_status = True
+                    print('Jadwal telah di hapus \n')
+            
             else : 
                 print('Input tidak valid')
             
     elif pilihan_menu == 3:
         print("Terima kasih telah menggunakan aplikasi ini")
         break
+    
+    else:
+            print("Input tidak valid")
     
     else:
             print("Input tidak valid")
