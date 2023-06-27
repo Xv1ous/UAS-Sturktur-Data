@@ -16,7 +16,7 @@ class JadwalKonsuler:
         self.jadwalKonsuler_status = jadwalKonsuler_status
         self.jadwalKonsuler_time = jadwalKonsuler_time
 
-biodata = [None] * 5
+biodata = [None] * 10
 
 daftarJadwal = {
     'Senin':[ JadwalKonsuler('Senin', 'Sena', True, '08:00 - 12:00'),
@@ -78,47 +78,47 @@ def pemasukan_biodata():
                 print('Jadwal telah ditambahkan \n')
             elif jamkonseling.lower() == 'b':
                 daftarJadwal[list(daftarJadwal.keys())[0]][1].jadwalKonsuler_status = False
-                biodata[0] = Bookinglist(nama, nim, usia, kasus)
+                biodata[1] = Bookinglist(nama, nim, usia, kasus)
                 print('Jadwal telah ditambahkan \n')
             
         elif harikonseling == 'selasa':
             if jamkonseling.lower() == 'a':
                 daftarJadwal[list(daftarJadwal.keys())[1]][0].jadwalKonsuler_status = False
-                biodata[1] = Bookinglist(nama, nim, usia, kasus)
+                biodata[2] = Bookinglist(nama, nim, usia, kasus)
                 print('Jadwal telah ditambahkan \n')
             elif jamkonseling.lower() == 'b':
                 daftarJadwal[list(daftarJadwal.keys())[1]][1].jadwalKonsuler_status = False
-                biodata[1] = Bookinglist(nama, nim, usia, kasus)
+                biodata[3] = Bookinglist(nama, nim, usia, kasus)
                 print('Jadwal telah ditambahkan \n')
             
         elif harikonseling == 'rabu':
             if jamkonseling.lower() == 'a':
                 daftarJadwal[list(daftarJadwal.keys())[2]][0].jadwalKonsuler_status = False
-                biodata[2] = Bookinglist(nama, nim, usia, kasus)
+                biodata[4] = Bookinglist(nama, nim, usia, kasus)
                 print('Jadwal telah ditambahkan \n')
             elif jamkonseling.lower() == 'b':
                 daftarJadwal[list(daftarJadwal.keys())[2]][1].jadwalKonsuler_status = False
-                biodata[2] = Bookinglist(nama, nim, usia, kasus)
+                biodata[5] = Bookinglist(nama, nim, usia, kasus)
                 print('Jadwal telah ditambahkan \n')
             
         elif harikonseling == 'kamis':
             if jamkonseling.lower() == 'a':
                 daftarJadwal[list(daftarJadwal.keys())[3]][0].jadwalKonsuler_status = False
-                biodata[3] = Bookinglist(nama, nim, usia, kasus)
+                biodata[6] = Bookinglist(nama, nim, usia, kasus)
                 print('Jadwal telah ditambahkan \n')
             elif jamkonseling.lower() == 'b':
                 daftarJadwal[list(daftarJadwal.keys())[3]][1].jadwalKonsuler_status = False
-                biodata[3] = Bookinglist(nama, nim, usia, kasus)
+                biodata[7] = Bookinglist(nama, nim, usia, kasus)
                 print('Jadwal telah ditambahkan \n')
             
         elif harikonseling == 'jumat':
             if jamkonseling.lower() == 'a':
                 daftarJadwal[list(daftarJadwal.keys())[4]][0].jadwalKonsuler_status = False
-                biodata[4] = Bookinglist(nama, nim, usia, kasus)
+                biodata[8] = Bookinglist(nama, nim, usia, kasus)
                 print('Jadwal telah ditambahkan \n')
             elif jamkonseling.lower() == 'b':
                 daftarJadwal[list(daftarJadwal.keys())[4]][1].jadwalKonsuler_status = False
-                biodata[4] = Bookinglist(nama, nim, usia, kasus)
+                biodata[9] = Bookinglist(nama, nim, usia, kasus)
                 print('Jadwal telah ditambahkan \n')
         else:
             print("Hari konseling tidak valid.")
@@ -127,26 +127,31 @@ def pemasukan_biodata():
         print(biodata)
         
 def penampilan_jadwal_status():
+    n = 0
+    
     for jadwal in daftarJadwal.values():
-        if jadwal.jadwalKonsuler_status:
-            tersedia = 'Available'
-            print('=====================================')
-            print('Hari : ', jadwal.jadwalKonsuler_hari)
-            print("Konsuler : ", jadwal.jadwalKonsuler_nama)
-            print("Status : ", tersedia)
-            print('=====================================')
+        if jadwal[n].jadwalKonsuler_status:
+                tersedia = 'Available'
+                print('=====================================')
+                print('Hari :', jadwal[n].jadwalKonsuler_hari)
+                print('Konsuler :', jadwal[n].jadwalKonsuler_nama)
+                print('Status :', tersedia)
+                print('=====================================')
         else:
             tidakTersedia = 'Not Available'
-            n = list(daftarJadwal.values()).index(jadwal)
-            print('=====================================')
-            print('Hari : ', jadwal.jadwalKonsuler_hari)
-            print('Jam : ', jadwal.jadwalKonsuler_time)
-            print("Konsuler : ", jadwal.jadwalKonsuler_nama)
-            print("Status : ", tidakTersedia)
-            print('di Booking oleh : ', biodata[n].bookinglist_name)
-            print('NIM : ', biodata[n].bookinglist_nim)
-            print('Usia : ', biodata[n].bookinglist_usia)
-            print('=====================================')
+            for j in jadwal:
+                n = list(daftarJadwal.values()).index(jadwal)
+                print('=====================================')
+                print('Hari :', j.jadwalKonsuler_hari)
+                print('Jam :', j.jadwalKonsuler_time)
+                print('Konsuler :', j.jadwalKonsuler_nama)
+                print('Status :', tidakTersedia)
+                print('Dibooking oleh :', biodata[n].bookinglist_name)
+                print('NIM :', biodata[n].bookinglist_nim)
+                print('Usia :', biodata[n].bookinglist_usia)
+                print('=====================================')
+                    
+
 
 def edit_biodata():
     penampilan_jadwal_status()
