@@ -24,6 +24,30 @@ jadwal = [
     JadwalKonsuler('jumat','Kafka',True,'12:00 - 16:00')
 ]
 
+login_data = {
+    'admin': 'admin123'
+}
+
+def clear_console():
+    os.system('cls' if os.name == 'nt' else 'clear')
+
+def login():
+    while True:
+        clear_console()
+        print("Silahkan login")
+        username = input("Username: ")
+        password = input("Password: ")
+
+        if username in login_data.keys() and login_data[username] == password:
+            print("Login berhasil!")
+            input("Tekan Enter untuk melanjutkan...")
+            break
+        else:
+            print("Username atau password salah!")
+            input("Tekan Enter untuk mencoba lagi...")
+
+login()
+
 ascii_art = """
   __        __   _                            _ 
   \ \      / /__| | ___ ___  _ __ ___   ___  | |
