@@ -340,6 +340,6 @@ while menu==True:
     
     else:
             print("Input tidak valid")
-    
+     
     else:
             print("Input tidak valid")
