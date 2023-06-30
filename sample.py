@@ -1,10 +1,11 @@
 import os
 
 class Bookinglist:
-    def __init__(self , bookinglist_name, bookinglist_nim, bookinglist_hp):
+    def __init__(self , bookinglist_name, bookinglist_nim, bookinglist_hp, bookinglist_umur):
         self.bookinglist_name = bookinglist_name
         self.bookinglist_nim = bookinglist_nim
         self.bookinglist_hp = bookinglist_hp
+        self.bookinglist_umur = bookinglist_umur
 
 class JadwalKonsuler:
     def __init__(self,jadwalKonsuler_hari,jadwalKonsuler_nama,jadwalKonsuler_status,jadwalKonsuler_waktu):
@@ -77,6 +78,7 @@ while menu==True:
                 nama = input("Nama : ")
                 nim = input("NIM : ")
                 hp = input("No HP : ")
+                umur = input("Umur : ")
                 id= 1
                 jadwal[0].jadwalKonsuler_status = False
                 print('Jadwal telah di tambahkan \n')
@@ -88,6 +90,7 @@ while menu==True:
                 nama = input("Nama : ")
                 nim = input("NIM : ")
                 hp = input("No HP : ")
+                umur = input("Umur : ")
                 id= 2
                 jadwal[1].jadwalKonsuler_status = False
                 print('Jadwal telah di tambahkan \n')
@@ -99,6 +102,7 @@ while menu==True:
                 nama = input("Nama : ")
                 nim = input("NIM : ")
                 hp = input("No HP : ")
+                umur = input("Umur : ")
                 id= 3
                 jadwal[2].jadwalKonsuler_status = False
                 print('Jadwal telah di tambahkan \n')
@@ -110,6 +114,7 @@ while menu==True:
                 nama = input("Nama : ")
                 nim = input("NIM : ")
                 hp = input("No HP : ")
+                umur = input("Umur : ")
                 id= 4
                 jadwal[3].jadwalKonsuler_status = False
                 print('Jadwal telah di tambahkan \n')
@@ -121,6 +126,7 @@ while menu==True:
                 nama = input("Nama : ")
                 nim = input("NIM : ")
                 hp = input("No HP : ")
+                umur = input("Umur : ")
                 id= 5
                 jadwal[4].jadwalKonsuler_status = False
                 print('Jadwal telah di tambahkan \n')
@@ -132,6 +138,7 @@ while menu==True:
                 nama = input("Nama : ")
                 nim = input("NIM : ")
                 hp = input("No HP : ")
+                umur = input("Umur : ")
                 id= 6
                 jadwal[5].jadwalKonsuler_status = False
                 print('Jadwal telah di tambahkan \n')
@@ -143,6 +150,7 @@ while menu==True:
                 nama = input("Nama : ")
                 nim = input("NIM : ")
                 hp = input("No HP : ")
+                umur = input("Umur : ")
                 id= 7
                 jadwal[6].jadwalKonsuler_status = False
                 print('Jadwal telah di tambahkan \n')
@@ -154,6 +162,7 @@ while menu==True:
                 nama = input("Nama : ")
                 nim = input("NIM : ")
                 hp = input("No HP : ")
+                umur = input("Umur : ")
                 id= 8
                 jadwal[7].jadwalKonsuler_status = False
                 print('Jadwal telah di tambahkan \n')
@@ -165,6 +174,7 @@ while menu==True:
                 nama = input("Nama : ")
                 nim = input("NIM : ")
                 hp = input("No HP : ")
+                umur = input("Umur : ")
                 id= 9
                 jadwal[8].jadwalKonsuler_status = False
                 print('Jadwal telah di tambahkan \n')
@@ -176,6 +186,7 @@ while menu==True:
                 nama = input("Nama : ")
                 nim = input("NIM : ")
                 hp = input("No HP : ")
+                umur = input("Umur : ")
                 id= 10
                 jadwal[9].jadwalKonsuler_status = False
                 print('Jadwal telah di tambahkan \n')
@@ -185,8 +196,8 @@ while menu==True:
             print('Input tidak valid')
             
         
-        if 'nama' in locals() and 'nim' in locals() and 'hp' in locals():
-            data_konseling = Bookinglist(nama, nim, hp)
+        if 'nama' in locals() and 'nim' in locals() and 'hp' in locals() and 'umur' in locals() and 'id' in locals():
+            data_konseling = Bookinglist(nama, nim, hp, umur)
             del data_list[id - 1]
             data_list.insert(id - 1, data_konseling)
         else:
@@ -215,6 +226,7 @@ while menu==True:
                 print("Status : ",tidakTersedia)
                 print('di Booking oleh : ',data_list[n].bookinglist_name)
                 print('NIM : ',data_list[n].bookinglist_nim)
+                print('Umur : ',data_list[n].bookinglist_umur)
                 print('No hp : ',data_list[n].bookinglist_hp)
                 print ('=====================================')
                 n += 1
@@ -278,7 +290,8 @@ while menu==True:
             if data_list[i] is not None and data_list[i].bookinglist_nim == pilihan_nim:
                 print('Nama : ',data_list[i].bookinglist_name)
                 print('NIM : ',data_list[i].bookinglist_nim)
-                print('HP : ',data_list[i].bookinglist_hp)    
+                print('HP : ',data_list[i].bookinglist_hp)
+                print('Umur : ',data_list[n].bookinglist_umur)    
             else:
                 pass
 
