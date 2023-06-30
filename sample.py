@@ -291,7 +291,7 @@ while menu==True:
                 print('Nama : ',data_list[i].bookinglist_name)
                 print('NIM : ',data_list[i].bookinglist_nim)
                 print('HP : ',data_list[i].bookinglist_hp)
-                print('Umur : ',data_list[n].bookinglist_umur)    
+                print('Umur : ',data_list[i].bookinglist_umur)    
             else:
                 pass
 
