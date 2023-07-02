@@ -350,7 +350,7 @@ while menu==True:
     elif pilihan_menu == 4:
         print("Terima kasih telah menggunakan aplikasi ini")
         break
-    
+        input()
     else:
             print("Input tidak valid")
      
