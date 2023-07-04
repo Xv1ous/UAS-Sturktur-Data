@@ -231,56 +231,55 @@ while menu==True:
                 print ('=====================================')
                 n += 1
         
-            
-        
-
         jawaban = input("Apakah ada yang ingin di hapus ? (y/t)")
         if jawaban.lower() == 'y' :
             tujuanHapus = input('Hari apa yang ingin di hapus ? ')
             tujuanWaktu = input('Masukan jam yang ingin dihapus (08:00 - 12:00(A) dan 12:00 - 16:00(B)):')
             if tujuanHapus.lower() == 'senin' and tujuanWaktu.lower()=='a':
                 if jadwal[0].jadwalKonsuler_status == False :
-                    jadwal[0].jadwalKonsuler_status = True
+                    jadwal[0].jadwalKonsuler_status = True     
                     print('Jadwal telah di hapus \n')
-            if tujuanHapus.lower() == 'senin' and tujuanWaktu.lower()=='b':
+            elif tujuanHapus.lower() == 'senin' and tujuanWaktu.lower()=='b':
                 if jadwal[1].jadwalKonsuler_status == False :
                     jadwal[1].jadwalKonsuler_status = True
                     print('Jadwal telah di hapus \n')
-            if tujuanHapus.lower() == 'selasa' and tujuanWaktu.lower()=='a':
+            elif tujuanHapus.lower() == 'selasa' and tujuanWaktu.lower()=='a':
                 if jadwal[2].jadwalKonsuler_status == False :
                     jadwal[2].jadwalKonsuler_status = True
                     print('Jadwal telah di hapus \n')
-            if tujuanHapus.lower() == 'selasa' and tujuanWaktu.lower()=='b':
+            elif tujuanHapus.lower() == 'selasa' and tujuanWaktu.lower()=='b':
                 if jadwal[3].jadwalKonsuler_status == False :
                     jadwal[3].jadwalKonsuler_status = True
                     print('Jadwal telah di hapus \n')
-            if tujuanHapus.lower() == 'rabu' and tujuanWaktu.lower()=='a':
+            elif tujuanHapus.lower() == 'rabu' and tujuanWaktu.lower()=='a':
                 if jadwal[4].jadwalKonsuler_status == False :
                     jadwal[4].jadwalKonsuler_status = True
                     print('Jadwal telah di hapus \n')
-            if tujuanHapus.lower() == 'rabu' and tujuanWaktu.lower()=='b':
+            elif tujuanHapus.lower() == 'rabu' and tujuanWaktu.lower()=='b':
                 if jadwal[5].jadwalKonsuler_status == False :
                     jadwal[5].jadwalKonsuler_status = True
                     print('Jadwal telah di hapus \n')
-            if tujuanHapus.lower() == 'kamis' and tujuanWaktu.lower()=='a':
+            elif tujuanHapus.lower() == 'kamis' and tujuanWaktu.lower()=='a':
                 if jadwal[6].jadwalKonsuler_status == False :
                     jadwal[6].jadwalKonsuler_status = True
                     print('Jadwal telah di hapus \n')
-            if tujuanHapus.lower() == 'kamis' and tujuanWaktu.lower()=='b':
+            elif tujuanHapus.lower() == 'kamis' and tujuanWaktu.lower()=='b':
                 if jadwal[7].jadwalKonsuler_status == False :
                     jadwal[7].jadwalKonsuler_status = True
                     print('Jadwal telah di hapus \n')
-            if tujuanHapus.lower() == 'jumat' and tujuanWaktu.lower()=='a':
+            elif tujuanHapus.lower() == 'jumat' and tujuanWaktu.lower()=='a':
                 if jadwal[8].jadwalKonsuler_status == False :
                     jadwal[8].jadwalKonsuler_status = True
                     print('Jadwal telah di hapus \n')
-            if tujuanHapus.lower() == 'jumat' and tujuanWaktu.lower()=='b':
+            elif tujuanHapus.lower() == 'jumat' and tujuanWaktu.lower()=='b':
                 if jadwal[9].jadwalKonsuler_status == False :
                     jadwal[9].jadwalKonsuler_status = True
                     print('Jadwal telah di hapus \n')
             
             else : 
                 print('Input tidak valid')
+        else :
+            print('\n')
             
     elif pilihan_menu == 3:
         pilihan_nim = input("Masukkan NIM : ")
@@ -291,7 +290,9 @@ while menu==True:
                 print('Nama : ',data_list[i].bookinglist_name)
                 print('NIM : ',data_list[i].bookinglist_nim)
                 print('HP : ',data_list[i].bookinglist_hp)
-                print('Umur : ',data_list[i].bookinglist_umur)    
+                print('Umur : ',data_list[i].bookinglist_umur)
+            elif data_list[i] is None != pilihan_nim:
+                pass
             else:
                 pass
 
@@ -315,33 +316,53 @@ while menu==True:
         if jadwalbook[0][3].bookinglist_nim == pilihan_nim:
             print('Hari booking : ',jadwalbook[0][0])
             print('Waktu booking : ',jadwalbook[0][2])
+        elif jadwalbook[0][3].bookinglist_nim != pilihan_nim:
+            pass
         elif jadwalbook[1][3].bookinglist_nim == pilihan_nim:
             print('Hari booking : ',jadwalbook[1][0])
             print('Waktu booking : ',jadwalbook[1][2])
+        elif jadwalbook[1][3].bookinglist_nim != pilihan_nim:
+            pass
         elif jadwalbook[2][3].bookinglist_nim == pilihan_nim:
             print('Hari booking : ',jadwalbook[2][0])
             print('Waktu booking : ',jadwalbook[2][2])
+        elif jadwalbook[2][3].bookinglist_nim != pilihan_nim:
+            pass
         elif jadwalbook[3][3].bookinglist_nim == pilihan_nim:
             print('Hari booking : ',jadwalbook[3][0])
             print('Waktu booking : ',jadwalbook[3][2])
+        elif jadwalbook[3][3].bookinglist_nim != pilihan_nim:
+            pass
         elif jadwalbook[4][3].bookinglist_nim == pilihan_nim:
             print('Hari booking : ',jadwalbook[4][0])
             print('Waktu booking : ',jadwalbook[4][2])
+        elif jadwalbook[4][3].bookinglist_nim != pilihan_nim:
+            pass
         elif jadwalbook[5][3].bookinglist_nim == pilihan_nim:
             print('Hari booking : ',jadwalbook[5][0])
             print('Waktu booking : ',jadwalbook[5][2])
+        elif jadwalbook[5][3].bookinglist_nim != pilihan_nim:
+            pass
         elif jadwalbook[6][3].bookinglist_nim == pilihan_nim:
             print('Hari booking : ',jadwalbook[6][0])
             print('Waktu booking : ',jadwalbook[6][2])
+        elif jadwalbook[6][3].bookinglist_nim != pilihan_nim:
+            pass
         elif jadwalbook[7][3].bookinglist_nim == pilihan_nim:
             print('Hari booking : ',jadwalbook[7][0])
             print('Waktu booking : ',jadwalbook[7][2])
+        elif jadwalbook[7][3].bookinglist_nim != pilihan_nim:
+            pass
         elif jadwalbook[8][3].bookinglist_nim == pilihan_nim:
             print('Hari booking : ',jadwalbook[8][0])
             print('Waktu booking : ',jadwalbook[8][2])
+        elif jadwalbook[8][3].bookinglist_nim != pilihan_nim:
+            pass
         elif jadwalbook[9][3].bookinglist_nim == pilihan_nim:
             print('Hari booking : ',jadwalbook[9][0])
             print('Waktu booking : ',jadwalbook[9][2])
+        elif jadwalbook[9][3].bookinglist_nim != pilihan_nim:
+            pass
         else:
             pass
         print ('=====================================')
@@ -354,4 +375,3 @@ while menu==True:
         
     else:
             print("Input tidak valid")
-     
