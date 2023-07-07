@@ -27,16 +27,33 @@ jadwal = [
     JadwalKonsuler('jumat','Kafka',True,'12:00 - 16:00')
 ]
 
+def clear_console():
+    os.system('cls' if os.name == 'nt' else 'clear')
+
 login_data = {
     'admin': 'admin123'
 }
 
-def clear_console():
-    os.system('cls' if os.name == 'nt' else 'clear')
+def register():
+    print ("Silahkan melakukan registrasi")
+    username = input("Masukan username: ")
+    password = input("Masukan password: ")
+    confirm_password = input("Pastikan password: ")
+
+    if password != confirm_password:
+        print("Passwords tidak sesuai.")
+        return
+
+    if username in login_data:
+        print("Username sudah ada.")
+        return
+
+    login_data[username] = password
+    print("Registrasi selesai!")
 
 def login():
     while True:
-        clear_console()
+        
         print("Silahkan login")
         username = input("Username: ")
         password = input("Password: ")
@@ -49,7 +66,14 @@ def login():
             print("Username atau password salah!")
             input("Tekan Enter untuk mencoba lagi...")
 
-login()
+registrasi_akun = input("Apakah anda sudah memiliki akun?(y/t)").lower()
+if registrasi_akun == 't':
+    register()
+elif registrasi_akun == 'y':
+    login()
+else:
+    print("Input tidak valid!")
+    
 ascii_art = """
   __        __   _                            _ 
   \ \      / /__| | ___ ___  _ __ ___   ___  | |
