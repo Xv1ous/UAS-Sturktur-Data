@@ -73,6 +73,8 @@ elif registrasi_akun == 'y':
     login()
 else:
     print("Input tidak valid!")
+
+login()
     
 ascii_art = """
   __        __   _                            _ 
