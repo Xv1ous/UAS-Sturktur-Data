@@ -1,5 +1,4 @@
 import time
-import pandas as pd
 from pytrends.request import TrendReq
 
 pytrends = TrendReq(hl='en-US')
